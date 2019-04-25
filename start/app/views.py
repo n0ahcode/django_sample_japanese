@@ -7,10 +7,9 @@ from django.urls import reverse
 
 def index(request):
     posts = Post.objects.all()
-    form = TextForm
     context = {
         'posts':posts,
-        'form':form,
+        'form':TextForm,
     }
     return render(request,'app/index.html',context)
 

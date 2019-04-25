@@ -119,18 +119,3 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
-
-
-
-
-#heroku_settings
-DEBUG = False
-
-try:
-    from .local_settings import *
-except ImportError:
-    pass
-
-if not DEBUG:
-    import django_heroku
-    django_heroku.settings(locals())
